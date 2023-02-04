@@ -4,9 +4,13 @@ import Game from "./Game/Game";
 export default function App() {
   return (
     <div className="page">
-      <main>
+      <div className="pageContent">
+        <header>
+          <h1>TicTacToe</h1>
+        </header>
+
         <Game></Game>
-      </main>
+      </div>
     </div>
   );
 }
