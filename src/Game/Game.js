@@ -18,8 +18,8 @@ function Square({ value, onSquareClick }) {
 }
 
 function Board({ xIsNext, squares, onPlay }) {
-  const x = "X";
-  const o = "O";
+  const x = "🤖";
+  const o = "👻";
 
   // React convention: use handle[Event] names for the function definitions which handle the events
   function handleSquareClick(i) {
