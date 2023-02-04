@@ -13,7 +13,8 @@ export default function Square({ value, onClick, nextValue, winner, name }) {
       onClick={onClick}
       className="square"
       disabled={value || winner}
-      aria-label={`Enter "${nextValue}" on Tile ${name}`}
+      // aria label is like the visible text but more detailed
+      aria-label={value || `Enter "${nextValue}" on Tile ${name}`}
     >
       {buttonContent}
     </button>
