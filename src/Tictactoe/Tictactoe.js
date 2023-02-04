@@ -1,23 +1,27 @@
 import React from "react";
 import "./Tictactoe.css";
 
+function Square() {
+  return <button className="square">X</button>;
+}
+
 export default function Tictactoe() {
   return (
     <article>
       <div className="board-row">
-        <button className="square">X</button>
-        <button className="square">X</button>
-        <button className="square">X</button>
+        <Square></Square>
+        <Square></Square>
+        <Square></Square>
       </div>
       <div className="board-row">
-        <button className="square">X</button>
-        <button className="square">X</button>
-        <button className="square">X</button>
+        <Square></Square>
+        <Square></Square>
+        <Square></Square>
       </div>
       <div className="board-row">
-        <button className="square">X</button>
-        <button className="square">X</button>
-        <button className="square">X</button>
+        <Square></Square>
+        <Square></Square>
+        <Square></Square>
       </div>
     </article>
   );
