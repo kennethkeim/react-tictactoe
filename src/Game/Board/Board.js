@@ -1,4 +1,4 @@
-import { calculateWinner } from "../../shared/calculateWinner";
+import { calculateWinner } from "../shared/calculateWinner";
 import React from "react";
 import Square from "../Square/Square";
 
