@@ -6,3 +6,16 @@ main {
 .game-info {
   margin-left: 20px;
 }
+
+.game-info ol {
+  list-style: none;
+}
+
+.jumpto-btn {
+  border: 1px solid #999;
+  color: #999;
+  padding: 4px 9px;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
