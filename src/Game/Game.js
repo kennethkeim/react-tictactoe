@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Game.css";
-import { calculateWinner } from "./shared/calculateWinner";
+import { calculateWinner } from "../shared/calculateWinner";
 
 // React convention: use on[Event] names for props which represent events
 function Square({ value, onSquareClick }) {
