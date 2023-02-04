@@ -1,11 +1,11 @@
 import React from "react";
-import "./Tictactoe.css";
+import "./Board.css";
 
 function Square() {
   return <button className="square">X</button>;
 }
 
-export default function Tictactoe() {
+export default function Board() {
   return (
     <article>
       <div className="board-row">

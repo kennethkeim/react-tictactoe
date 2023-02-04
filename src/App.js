@@ -1,11 +1,11 @@
 import React from "react";
-import Tictactoe from "./Tictactoe/Tictactoe";
+import Board from "./Board/Board";
 
 export default function App() {
   return (
     <div className="page">
       <main>
-        <Tictactoe></Tictactoe>
+        <Board></Board>
       </main>
     </div>
   );
