@@ -45,7 +45,7 @@ export default function Board({ xIsNext, squares, onPlay }) {
           {row.map((cell) => (
             <Square
               key={cell}
-              name={cell + 1}
+              nextValue={xIsNext ? x : o}
               value={squares[cell]}
               onClick={() => handleSquareClick(cell)}
             ></Square>

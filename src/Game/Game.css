@@ -2,15 +2,24 @@
   background: #d5b85a;
   border: 1px solid #999;
   float: left;
-  font-size: 32px;
-  font-weight: bold;
-  line-height: 34px;
   height: 100px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
   width: 100px;
+}
+
+.square .value {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 34px;
+  color: #444;
+}
+
+.square .instructions {
+  font-size: 0.8rem;
+  color: #999;
 }
 
 .board-row:after {
