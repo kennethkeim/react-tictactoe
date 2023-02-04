@@ -27,7 +27,6 @@ function Square({ value, onSquareClick }) {
 export default function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
-  const [winner, setWinner] = useState(null);
 
   // React convention: use handle[Event] names for the function definitions which handle the events
   function handleSquareClick(i) {
@@ -43,12 +42,24 @@ export default function Board() {
 
     setSquares(newSquareArr);
     setXIsNext(!xIsNext);
+  }
 
-    setWinner(calculateWinner(newSquareArr));
+  // interesting that the inner function causes the outer to re-render
+  // also interesting that the react tutorial doesn't use a state property for the "status" variable
+  const winner = calculateWinner(squares);
+  let status;
+  if (winner) {
+    status = "Winner: " + winner;
+  } else {
+    status = "Next player: " + (xIsNext ? "X" : "O");
   }
 
   return (
-    <div className="container">
+    <div>
+      <aside>
+        <p>{status}</p>
+      </aside>
+
       <article>
         <div className="board-row">
           <Square
@@ -93,10 +104,6 @@ export default function Board() {
           ></Square>
         </div>
       </article>
-
-      <aside>
-        <p>Winner: {winner}</p>
-      </aside>
     </div>
   );
 }
