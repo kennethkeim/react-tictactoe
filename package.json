@@ -6,6 +6,7 @@
   },
   "main": "/index.js",
   "devDependencies": {
+    "prettier": "^2.8.2",
     "react-scripts": "1.0.0"
   },
   "name": "wjwuw8",
