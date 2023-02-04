@@ -5,8 +5,11 @@
 }
 
 .board-row {
+  /* brittle because of fixed width children */
   width: 450px;
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
 }

@@ -35,7 +35,7 @@ export default function Board({ xIsNext, squares, onPlay }) {
   return (
     <article>
       <h2 className="status">{status}</h2>
-      <article className="board-row">
+      <ol className="board-row">
         {squares.map((square, i) => (
           <Square
             key={i}
@@ -46,7 +46,7 @@ export default function Board({ xIsNext, squares, onPlay }) {
             onClick={() => handleSquareClick(i)}
           ></Square>
         ))}
-      </article>
+      </ol>
     </article>
   );
 }
