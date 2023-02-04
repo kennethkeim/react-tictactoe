@@ -1,7 +1,7 @@
 import React from "react";
 
 // React convention: use on[Event] names for props which represent events
-export default function Square({ value, onClick, nextValue }) {
+export default function Square({ value, onClick, nextValue, winner }) {
   const buttonContent = value ? (
     <span className="value">{value}</span>
   ) : (
@@ -9,7 +9,7 @@ export default function Square({ value, onClick, nextValue }) {
   );
 
   return (
-    <button onClick={onClick} className="square">
+    <button onClick={onClick} className="square" disabled={value || winner}>
       {buttonContent}
     </button>
   );
