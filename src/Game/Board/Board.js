@@ -1,6 +1,7 @@
 import { calculateWinner } from "../shared/calculateWinner";
 import React from "react";
 import Square from "../Square/Square";
+import "./Board.css";
 
 export default function Board({ xIsNext, squares, onPlay }) {
   const x = "X";

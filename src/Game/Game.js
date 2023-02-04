@@ -34,10 +34,10 @@ export default function Game() {
   });
 
   return (
-    <main className="game">
+    <main>
       <Board squares={currentSquares} xIsNext={xIsNext} onPlay={handlePlay} />
 
-      <aside className="game-info">
+      <aside>
         <ol>{moves}</ol>
       </aside>
     </main>

@@ -1,4 +1,5 @@
 import React from "react";
+import "./Square.css";
 
 // React convention: use on[Event] names for props which represent events
 export default function Square({ value, onClick, nextValue, winner, name }) {
