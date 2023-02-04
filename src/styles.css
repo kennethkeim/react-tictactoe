@@ -51,7 +51,7 @@ ul {
 }
 
 body {
-  font-family: "menlo", Courier, monospace;
+  font-family: "Monaco", "menlo", Courier, monospace;
   margin: 20px;
   padding: 0;
 }
