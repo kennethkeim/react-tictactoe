@@ -32,29 +32,21 @@ export default function Board({ xIsNext, squares, onPlay }) {
     status = "Next player: " + (xIsNext ? x : o);
   }
 
-  const rows = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-  ];
-
   return (
     <article>
       <h2 className="status">{status}</h2>
-      {rows.map((row, i) => (
-        <div className="board-row" key={`row-${i}`}>
-          {row.map((cell) => (
-            <Square
-              key={cell}
-              nextValue={xIsNext ? x : o}
-              winner={winner}
-              name={cell + 1}
-              value={squares[cell]}
-              onClick={() => handleSquareClick(cell)}
-            ></Square>
-          ))}
-        </div>
-      ))}
+      <article className="board-row">
+        {squares.map((square, i) => (
+          <Square
+            key={i}
+            nextValue={xIsNext ? x : o}
+            winner={winner}
+            name={i + 1}
+            value={square}
+            onClick={() => handleSquareClick(i)}
+          ></Square>
+        ))}
+      </article>
     </article>
   );
 }
