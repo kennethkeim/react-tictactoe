@@ -39,7 +39,7 @@ export default function Board({ xIsNext, squares, onPlay }) {
 
   return (
     <article>
-      <div className="status">{status}</div>
+      <h2 className="status">{status}</h2>
       {rows.map((row, i) => (
         <div className="board-row" key={`row-${i}`}>
           {row.map((cell) => (
