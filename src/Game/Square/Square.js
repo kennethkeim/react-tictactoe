@@ -5,11 +5,16 @@ export default function Square({ value, onClick, nextValue, winner, name }) {
   const buttonContent = value ? (
     <span className="value">{value}</span>
   ) : (
-    <span className="instructions">{`Enter "${nextValue}" on Tile ${name}`}</span>
+    <span className="instructions">{`Enter ${nextValue}`}</span>
   );
 
   return (
-    <button onClick={onClick} className="square" disabled={value || winner}>
+    <button
+      onClick={onClick}
+      className="square"
+      disabled={value || winner}
+      aria-label={`Enter "${nextValue}" on Tile ${name}`}
+    >
       {buttonContent}
     </button>
   );
