@@ -8,6 +8,11 @@
   padding: 0;
   text-align: center;
   width: 150px;
+  cursor: pointer;
+}
+
+.square:disabled {
+  cursor: not-allowed;
 }
 
 .square .value {
