@@ -4,18 +4,11 @@ import { calculateWinner } from "./shared/calculateWinner";
 
 // React convention: use on[Event] names for props which represent events
 function Square({ value, onSquareClick }) {
-  const inactiveBg = "#d5b85a";
-  const activeBg = "#fcd12a";
-  const [bg, setBg] = useState(inactiveBg);
-
-  function onClick() {
-    onSquareClick();
-    setBg(activeBg);
-  }
+  const bg = "#d5b85a";
 
   return (
     <button
-      onClick={onClick}
+      onClick={onSquareClick}
       className="square"
       style={{ backgroundColor: bg }}
     >
