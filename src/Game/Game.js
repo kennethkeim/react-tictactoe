@@ -23,7 +23,7 @@ function Board({ xIsNext, squares, onPlay }) {
 
   // React convention: use handle[Event] names for the function definitions which handle the events
   function handleSquareClick(i) {
-    if (squares[i] || winner) return;
+    if (squares[i] || calculateWinner(squares)) return;
 
     const newSquareArr = [...squares];
 
@@ -48,6 +48,7 @@ function Board({ xIsNext, squares, onPlay }) {
 
   return (
     <article>
+      <div className="status">{status}</div>
       <div className="board-row">
         <Square
           value={squares[0]}
