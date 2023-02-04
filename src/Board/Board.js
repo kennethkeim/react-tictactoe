@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./Board.css";
+import { calculateWinner } from "./shared/calculateWinner";
 
+// React convention: use on[Event] names for props which represent events
 function Square({ value, onSquareClick }) {
   const inactiveBg = "#d5b85a";
   const activeBg = "#fcd12a";
@@ -24,57 +26,78 @@ function Square({ value, onSquareClick }) {
 
 export default function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
+  const [xIsNext, setXIsNext] = useState(true);
+  const [winner, setWinner] = useState(null);
 
-  function handleSqClick(i) {
+  // React convention: use handle[Event] names for the function definitions which handle the events
+  function handleSquareClick(i) {
+    if (squares[i] || winner) return;
+
     const newSquareArr = [...squares];
-    newSquareArr[i] = "X";
+
+    if (xIsNext) {
+      newSquareArr[i] = "X";
+    } else {
+      newSquareArr[i] = "O";
+    }
+
     setSquares(newSquareArr);
+    setXIsNext(!xIsNext);
+
+    const newWinnerResult = calculateWinner(newSquareArr);
+    if (newWinnerResult) setWinner(newWinnerResult);
   }
 
   return (
-    <article>
-      <div className="board-row">
-        <Square
-          value={squares[0]}
-          onSquareClick={() => handleSqClick(0)}
-        ></Square>
-        <Square
-          value={squares[1]}
-          onSquareClick={() => handleSqClick(1)}
-        ></Square>
-        <Square
-          value={squares[2]}
-          onSquareClick={() => handleSqClick(2)}
-        ></Square>
-      </div>
-      <div className="board-row">
-        <Square
-          value={squares[3]}
-          onSquareClick={() => handleSqClick(3)}
-        ></Square>
-        <Square
-          value={squares[4]}
-          onSquareClick={() => handleSqClick(4)}
-        ></Square>
-        <Square
-          value={squares[5]}
-          onSquareClick={() => handleSqClick(5)}
-        ></Square>
-      </div>
-      <div className="board-row">
-        <Square
-          value={squares[6]}
-          onSquareClick={() => handleSqClick(6)}
-        ></Square>
-        <Square
-          value={squares[7]}
-          onSquareClick={() => handleSqClick(7)}
-        ></Square>
-        <Square
-          value={squares[8]}
-          onSquareClick={() => handleSqClick(8)}
-        ></Square>
-      </div>
-    </article>
+    <div className="container">
+      <article>
+        <div className="board-row">
+          <Square
+            value={squares[0]}
+            onSquareClick={() => handleSquareClick(0)}
+          ></Square>
+          <Square
+            value={squares[1]}
+            onSquareClick={() => handleSquareClick(1)}
+          ></Square>
+          <Square
+            value={squares[2]}
+            onSquareClick={() => handleSquareClick(2)}
+          ></Square>
+        </div>
+        <div className="board-row">
+          <Square
+            value={squares[3]}
+            onSquareClick={() => handleSquareClick(3)}
+          ></Square>
+          <Square
+            value={squares[4]}
+            onSquareClick={() => handleSquareClick(4)}
+          ></Square>
+          <Square
+            value={squares[5]}
+            onSquareClick={() => handleSquareClick(5)}
+          ></Square>
+        </div>
+        <div className="board-row">
+          <Square
+            value={squares[6]}
+            onSquareClick={() => handleSquareClick(6)}
+          ></Square>
+          <Square
+            value={squares[7]}
+            onSquareClick={() => handleSquareClick(7)}
+          ></Square>
+          <Square
+            value={squares[8]}
+            onSquareClick={() => handleSquareClick(8)}
+          ></Square>
+        </div>
+      </article>
+
+      <aside>
+        <p>Winner: {winner}</p>
+      </aside>
+    </div>
   );
 }
