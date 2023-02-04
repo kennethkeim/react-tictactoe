@@ -18,6 +18,9 @@ function Square({ value, onSquareClick }) {
 }
 
 function Board({ xIsNext, squares, onPlay }) {
+  const x = "X";
+  const o = "O";
+
   // React convention: use handle[Event] names for the function definitions which handle the events
   function handleSquareClick(i) {
     if (squares[i] || winner) return;
@@ -25,9 +28,9 @@ function Board({ xIsNext, squares, onPlay }) {
     const newSquareArr = [...squares];
 
     if (xIsNext) {
-      newSquareArr[i] = "X";
+      newSquareArr[i] = x;
     } else {
-      newSquareArr[i] = "O";
+      newSquareArr[i] = o;
     }
 
     onPlay(newSquareArr);
@@ -40,7 +43,7 @@ function Board({ xIsNext, squares, onPlay }) {
   if (winner) {
     status = "Winner: " + winner;
   } else {
-    status = "Next player: " + (xIsNext ? "X" : "O");
+    status = "Next player: " + (xIsNext ? x : o);
   }
 
   return (
