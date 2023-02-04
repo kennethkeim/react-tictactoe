@@ -2,23 +2,23 @@
   background: #d5b85a;
   border: 1px solid #999;
   float: left;
-  height: 100px;
+  height: 150px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 100px;
+  width: 150px;
 }
 
 .square .value {
   font-size: 32px;
   font-weight: bold;
-  line-height: 34px;
+  line-height: 40px;
   color: #444;
 }
 
 .square .instructions {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #999;
 }
 
