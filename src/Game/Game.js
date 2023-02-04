@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Board.css";
+import "./Game.css";
 import { calculateWinner } from "./shared/calculateWinner";
 
 // React convention: use on[Event] names for props which represent events
@@ -24,7 +24,7 @@ function Square({ value, onSquareClick }) {
   );
 }
 
-export default function Board() {
+function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
 
@@ -104,6 +104,19 @@ export default function Board() {
           ></Square>
         </div>
       </article>
+    </div>
+  );
+}
+
+export default function Game() {
+  return (
+    <div className="game">
+      <div className="game-board">
+        <Board />
+      </div>
+      <div className="game-info">
+        <ol>{/*TODO*/}</ol>
+      </div>
     </div>
   );
 }

@@ -1,11 +1,11 @@
 import React from "react";
-import Board from "./Board/Board";
+import Game from "./Game/Game";
 
 export default function App() {
   return (
     <div className="page">
       <main>
-        <Board></Board>
+        <Game></Game>
       </main>
     </div>
   );
