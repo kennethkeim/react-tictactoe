@@ -44,8 +44,7 @@ export default function Board() {
     setSquares(newSquareArr);
     setXIsNext(!xIsNext);
 
-    const newWinnerResult = calculateWinner(newSquareArr);
-    if (newWinnerResult) setWinner(newWinnerResult);
+    setWinner(calculateWinner(newSquareArr));
   }
 
   return (
