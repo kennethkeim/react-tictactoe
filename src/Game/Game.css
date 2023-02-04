@@ -3,6 +3,6 @@ main {
   flex-direction: row;
 }
 
-aside {
+.game-info {
   margin-left: 20px;
 }

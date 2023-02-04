@@ -37,7 +37,7 @@ export default function Game() {
     <main>
       <Board squares={currentSquares} xIsNext={xIsNext} onPlay={handlePlay} />
 
-      <aside>
+      <aside className="game-info">
         <ol>{moves}</ol>
       </aside>
     </main>
